@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import {auth,provider} from "./FirebaseAuth/config";
 import {signInWithPopup} from "firebase/auth";
 import Home from "./Home/Home";
-import SignInPage from "./SignInPage";
+import { useNavigate } from "react-router-dom"
 
-function SignIn(){
+
+const SignInPage = () => {
+
+  const history = useNavigate()
+
     const [value,setValue] = useState('')
     const handleClick =()=>{
+      // history.replace('/');
         signInWithPopup(auth,provider).then((data)=>{
             setValue(data.user.email)
             console.log(data.user.email);
@@ -14,19 +19,21 @@ function SignIn(){
             localStorage.setItem("email",data.user.email)
         })
     }
+    
 
     useEffect(()=>{
         setValue(localStorage.getItem('email'))
+        console.log("Successfulley stored to local storage");
     })
-
-return (
+  return (
     <div>
-        {
-        value?<Home/>:
-        <SignInPage />
-        // <button onClick={handleClick} style={{marginLeft:'80vw',marginTop:'15px',padding:'3px'}}>Signin With Google</button>
-        }
-    </div>
-);
+            {
+            value ?  window.location.href=`/home` :
+              <button onClick={handleClick} style={{marginLeft:'80vw',marginTop:'15px',padding:'3px'}}>Signin With Google</button>
+           
+            }
+              </div>
+  )
 }
-export default SignIn;
+
+export default SignInPage

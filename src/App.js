@@ -1,9 +1,11 @@
 import './App.css';
-import Signin from './Signin';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import AllRoutes from './AllRoutes'
+
 function App() {
   return (
-    <div className="App">
-    <Signin/>
+    <div>
+      <AllRoutes/>
     </div>
   );
 }
