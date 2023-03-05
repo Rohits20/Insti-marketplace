@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {auth,provider} from "./FirebaseAuth/config";
 import {signInWithPopup} from "firebase/auth";
-
+import Upload from './UploadProductInfo/Upload'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Signin from './Signin';
 import Home from './Home/Home.js'
@@ -28,9 +28,9 @@ const AllRoutes = () => {
     <div >
       <Routes>
       <Route exact path="/" element={ <SignInPage/> }/>
-      {/* <Route exact path="/siginPage" element={value ?   null : <Signin/>}/> */}
       <Route exact path="/home" element={<Home/>}/>
       <Route exact path="/product" element={<ItemPage/>}/>
+      <Route exact path="/upload" element={<Upload/>}/>
       </Routes>
     
     </div>

@@ -81,29 +81,49 @@ const ItemPage = ({
                 <button onClick={logout} style={{height:'30px'}}>Logout</button>
                 <BsPersonCircle size='23px'style={{marginLeft:'5vw', marginTop:'2px'}}/>
             </div>
+            <div style= {{height:'1px' , backgroundColor: 'gray'}}>
+
+            </div>
      </div>
+     
+     <div className='ImageAndInfo'>
      <div className='ProductImage'>
     
-      <div className='ProductSmallImageGroup'>
-      <ScrollBar style={{height: '70px', width:'400px'}}>
-        {
-        ItemMultipleImages.map(data => (
-          <img key={data.id} onMouseEnter={() => onMouseEnter(data)} onMouseLeave={handleMouseLeave} style={hoverIndex === data.id ? { border:'2px solid' , borderColor: 'Blue'} : {border:'2px solid' , borderColor: 'White'}}
-          className='ProductSmallImage' src= {data.ImageURL} alt="Product description"></img>
-        ))}
-         </ScrollBar>
-      
+    <div className='ProductSmallImageGroup'>
+    <ScrollBar style={{height: '70px', width:'400px'}}>
+      {
+      ItemMultipleImages.map(data => (
+        <img key={data.id} onMouseEnter={() => onMouseEnter(data)} onMouseLeave={handleMouseLeave} style={hoverIndex === data.id ? { border:'2px solid' , borderColor: 'Blue'} : {border:'2px solid' , borderColor: 'White'}}
+        className='ProductSmallImage' src= {data.ImageURL} alt="Product description"></img>
+      ))}
+       </ScrollBar>
+    
+    </div>
+    
+    <img className='ProductBigImage' src={bigImageURl}></img>
+   </div>
+   <div className='OnlyInfo'>
+      <div style={{ fontSize: 18 ,marginBottom:'8px'}} >Pacer Evo 2.2 Walking Shoes For Men</div>
+      <div style={{ fontSize: 23 ,marginBottom:'8px'}} >₹999.99</div>
+      <div style={{ fontSize: 20 ,marginBottom:'8px'}} >14 months old</div>
+      <div style={{ fontSize: 20 ,marginBottom:'8px'}} >2 years Warranty period</div>
+      <div className='OnlyInfoDesc'  >A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.</div>
+      <div className='BidButton'>
+        <div className='BuyNowButton'>
+          Buy now
+        </div>
+      <div className='BidLowButton'>
+        Bid High
       </div>
-      
-      <img className='ProductBigImage' src={bigImageURl}></img>
+      <div className='BidHighButton'>
+        Bid Low
+      </div>
+      </div>
+   
      </div>
-     <div>
-      <div style={{ fontSize: 20 }} >Pacer Evo 2.2 Walking Shoes For Men</div>
-      <div style={{ fontSize: 20 }} >₹999.99</div>
-      <div style={{ fontSize: 20 }} >14 months old</div>
-      <div style={{ fontSize: 20 }} >2 years Warranty period</div>
-      <div style={{ fontSize: 20 }} >A lamp is a device that makes light and heat. Lamps usually work with electricity, using a lightbulb. In the United States, a lamp is usually considered a desk lamp or floor lamp. Other sources of light are called 'lights', such as streetlights, flashlights, and headlights, which in some countries are called streetlamps, torches and headlamps.</div>
      </div>
+     
+     
     </div>
   )
 }

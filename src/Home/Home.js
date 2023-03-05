@@ -26,7 +26,10 @@ function Home(){
                 <button onClick={logout}>Logout</button>
                 <BsPersonCircle size='23px'style={{marginLeft:'5vw', marginTop:'2px'}}/>
             </div>
-            <button className="upload">
+            <div style= {{height:'0.5px' , backgroundColor: 'gray', marginBottom:'10px'}}>
+
+            </div>
+            <button onClick={event =>  window.location.href=`/upload`} className="upload">
                 Upload items
                 <IoMdAddCircle size='20px' style ={{marginLeft:'15px', marginTop: '-3px'}}/>
             </button>
